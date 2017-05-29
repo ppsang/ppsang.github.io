@@ -175,6 +175,169 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-markdown的语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/29/markdown的语法/">markdown的语法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/29/markdown的语法/" class="archive-article-date">
+  	<time datetime="2017-05-29T03:54:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>段落引用标签 markdown支持html语法，所以有两种写法，html段落引用标签，前后会缩进，并且第一行会有&lt; p&gt;效果，但是可以添加自定义的css样式，使用markdown的语法写比较简洁：</p>
+<ul>
+<li><p>效果：<br><blockquote style="text-align: center;"><br>html标签可以实现居中的效果<br><blockquote style="text-align: center;"><br>嵌套使用<br></blockquote><br></blockquote></p>
+<blockquote>
+<p>markdown标签</p>
+<blockquote>
+<p>markdown引用第二次</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">style</span>=<span class="string">"text-align: center;"</span>&gt;</span></div><div class="line">html标签可以实现居中的效果</div><div class="line">  <span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">style</span>=<span class="string">"text-align: center;"</span>&gt;</span></div><div class="line">    嵌套使用</div><div class="line">  <span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></div><div class="line">&gt; markdown标签</div><div class="line">&gt;&gt; markdown引用第二次</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><hr style="border: 1px solid green"></p>
+<ul>
+<li>短引用标签 html普通引用标签, 会使包含在标签里面的文字被前后两个引号包含和段落引用的效果有区别：<ul>
+<li>⚠️ 短引用并没有使文字加红的效果，这里只是为了更好的区分</li>
+<li>效果：<br>短引用标签之前<q><font style="color:red">我是短引用标签</font></q>短引用标签之前</li>
+<li>代码：<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">短引用标签之前<span class="tag">&lt;<span class="name">q</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">style</span>=<span class="string">"color:red"</span>&gt;</span>我是短引用标签<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;/<span class="name">q</span>&gt;</span>短引用标签之前</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><hr style="border: 1px solid green"></p>
+<ul>
+<li><p>分割线效果 最终都是被解析为hr 使用原生的hr标签 可以定制自己的需求，一般使用markdown语法即可：</p>
+<ul>
+<li>效果：</li>
+</ul>
+<hr>
+<hr>
+<p><hr style="border: 1px solid red"></p>
+<ul>
+<li>代码 _ 上面要空一行：<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">---</div><div class="line">***</div><div class="line"><span class="tag">&lt;<span class="name">hr</span> <span class="attr">style</span>=<span class="string">"border: 1px solid red"</span>/&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><hr style="border: 1px solid green"></p>
+<ul>
+<li><p>向文章里面添加代码，分为两种 行内代码插入和代码块插入(前文黑色部分)：</p>
+<ul>
+<li>效果：<br><code>这是行内代码引用的效果&lt;br/&gt;
+这是行内代码引用的效果</code></li>
+<li><p>行内代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">`</div><div class="line"> 这是行内代码引用的效果&lt;br/&gt;</div><div class="line"> 这是行内代码引用的效果</div><div class="line">`</div></pre></td></tr></table></figure>
+</li>
+<li><p>代码块代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;pre&gt;</div><div class="line">  ``` html 设置要高亮的代码风格 使用时去掉 pre 标签</div><div class="line">  &lt;hr style=&quot;border: 1px solid red&quot;/&gt;</div><div class="line">  ```&lt;/pre&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><hr style="border: 1px solid green"></p>
+<ul>
+<li><p>有序和无需列表</p>
+<ul>
+<li>有序列表</li>
+<li>效果：<br>1. 第一行<br>2. 第二行</li>
+<li><p>有序列表 代码 目前列表是默认从1递增，跟所输入的数字没有关系：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. 第一行</div><div class="line">200. 第二行</div></pre></td></tr></table></figure>
+</li>
+<li><p>无序列表代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">+ 实现无序列表的第一种方式</div><div class="line">- 实现无序列表的第二种方式</div><div class="line">* 实现无序列表的第三种方式</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><hr style="border: 1px solid green"></p>
+<ul>
+<li>插入图片<ul>
+<li>效果：<br><img src="/static/image/avatar.jpeg" alt="图片显示不出来时提示" title="我的头像"><img src="/static/image/avatar.jpeg" alt="图片显示不出来时提示" title="我的头像"></li>
+<li>代码 目前没办法自定义宽高 有这个需求可以该用image标签：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![图片显示不出来时提示](/static/image/avatar.jpeg &apos;我的头像&apos;)![图片显示不出来时提示](/static/image/avatar.jpeg &apos;我的头像&apos;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><hr style="border: 1px solid green"></p>
+<ul>
+<li>链接<ul>
+<li>效果：<br>邮箱链接：<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#x61;&#x64;&#109;&#x69;&#110;&#64;&#97;&#x64;&#109;&#105;&#110;&#46;&#99;&#111;&#x6d;">&#x61;&#x64;&#109;&#x69;&#110;&#64;&#97;&#x64;&#109;&#105;&#110;&#46;&#99;&#111;&#x6d;</a><br>超链接：<a href="https://www.google.com/ncr" target="_blank" rel="external">Google</a></li>
+<li>代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">邮箱链接：&lt;chenhongvvei@gmail.com&gt;</div><div class="line">超链接：[Google](https://www.google.com/ncr)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><hr style="border: 1px solid green"></p>
+<ul>
+<li>感谢<ul>
+<li><a href="http://wowubuntu.com/markdown/#img" target="_blank" rel="external">Markdown 语法说明 (简体中文版)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank" rel="external">makrdown-wiki</a></li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">markdown css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端/" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-搭建ss服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -195,10 +358,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简单几步搭建一个ss服务器"><a href="#简单几步搭建一个ss服务器" class="headerlink" title="简单几步搭建一个ss服务器"></a>简单几步搭建一个ss服务器</h3><p></p><p>搭建vpn和ss服务器都能够实现翻墙的效果，但是ss服务器在客户端里面能够设置自动代理模式，可以很方便的实现访问国内国外网站两不误,所以只是翻墙的化，搭建一个ss服务器还是一个不错的选择</p><p></p>
+        <blockquote style="text-align: center;"><br>简单几步搭建ss服务器<br></blockquote>
+
+<p></p><p>搭建vpn和ss服务器都能够实现翻墙的效果，但是ss服务器在客户端里面能够设置自动代理模式，可以很方便的实现访问国内国外网站两不误,所以只是翻墙的化，搭建一个ss服务器还是一个不错的选择</p><p></p>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3>
         
-          <a class="article-more-a" href="/2017/05/28/搭建ss服务器/#more">more >></a>
+          <a class="article-more-a" href="/2017/05/28/搭建ss服务器/#more">展开全文 >></a>
         
       
 
@@ -231,10 +396,6 @@
 	</div>
 
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/28/搭建ss服务器/">more >></a>
-        </p>
       
 
       
@@ -301,10 +462,6 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/25/使用mybatis插件/">more >></a>
-        </p>
-      
 
       
       <div class="clearfix"></div>
@@ -339,7 +496,7 @@
       
         <h3 id="记录下安装hexo的过程中遇到的问题以及踩过的坑"><a href="#记录下安装hexo的过程中遇到的问题以及踩过的坑" class="headerlink" title="记录下安装hexo的过程中遇到的问题以及踩过的坑"></a>记录下安装hexo的过程中遇到的问题以及踩过的坑</h3><p></p><p>偶然间看到hexo+github教程，是个轻量级的博客，可以自己定制显示的各种样式，感觉比较高大上，于是乎就按照教程进行安装，但是安装的过程应该来说并不怎么顺利，所以就记录一下我在安装的过程中所遇到的问题<br></p><br>
         
-          <a class="article-more-a" href="/2017/05/24/Hexo安装及踩坑记录/#more">more >></a>
+          <a class="article-more-a" href="/2017/05/24/Hexo安装及踩坑记录/#more">展开全文 >></a>
         
       
 
@@ -372,10 +529,6 @@
 	</div>
 
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/24/Hexo安装及踩坑记录/">more >></a>
-        </p>
       
 
       
@@ -411,7 +564,7 @@
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
         
-          <a class="article-more-a" href="/2017/05/24/hello-world/#more">more >></a>
+          <a class="article-more-a" href="/2017/05/24/hello-world/#more">展开全文 >></a>
         
       
 
@@ -444,10 +597,6 @@
 	</div>
 
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/24/hello-world/">more >></a>
-        </p>
       
 
       
@@ -553,11 +702,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">markdown css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mybatis 数据库</a>
+                <a href="javascript:void(0)" class="js-tag color5">Shadowsockets 翻墙 ss</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,7 +714,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Shadowsockets 翻墙 ss</a>
+                <a href="javascript:void(0)" class="js-tag color2">mybatis 数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js hexo</a>
               </li>
             
             <div class="clearfix"></div>
@@ -648,7 +801,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">没车没房&lt;br&gt;&lt;br&gt;苦逼程序猿一枚&lt;br&gt;Thank you!</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">没车没房&lt;br&gt;&lt;br&gt;快乐的程序猿一枚&lt;br&gt;Thank you!</div>
   	  	
     	</section>
     
